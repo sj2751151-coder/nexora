@@ -1,4 +1,4 @@
-name: Deploy NEXORA to Cloudflare Pages
+name: Deploy NEXORA Worker
 
 on:
   push:
@@ -8,20 +8,18 @@ on:
 
 permissions:
   contents: read
-  deployments: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy NEXORA
+    name: Deploy NEXORA to Cloudflare Workers
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v4
+      - name: Deploy Worker and static assets
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=nexora --branch=main
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: deploy
