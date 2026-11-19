@@ -13,10 +13,10 @@
 </style></head>
 <body><div class="wrap">
 <header class="top"><div class="brand"><div class="logo">N</div>NEXORA</div><nav class="nav"><a href="#tools">Tools</a><a href="#about">About</a></nav></header>
-<section class="hero"><div class="eyebrow">Your digital workspace</div><h1>One Platform.<br><span>Endless Possibilities.</span></h1><p>Simple, powerful tools for everyday digital work. Fast, free and ready to use — right in your browser.</p><div class="search"><span>⌕</span><input id="search" placeholder="Search 15 free tools..." aria-label="Search tools"></div></section>
+<section class="hero"><div class="eyebrow">Your digital workspace</div><h1>One Platform.<br><span>Endless Possibilities.</span></h1><p>Simple, powerful tools for everyday digital work. Fast, free and ready to use — right in your browser.</p><div class="search"><span>⌕</span><input id="search" placeholder="Search 20 free tools..." aria-label="Search tools"></div></section>
 <div class="section-head" id="tools"><div><h2>Explore tools</h2><p>Useful utilities. No installation required.</p></div><div class="count" id="count">15 tools</div></div>
 <div class="tool-panel" id="panel"><div class="panel-top"><h3 id="panelTitle">Tool</h3><button class="close" id="close">✕ Close</button></div><div id="panelBody"></div></div>
-<div class="layout"><aside class="sidebar"><div class="side-label">CATEGORIES</div><button class="cat active" data-cat="All">✦ All tools</button><button class="cat" data-cat="Text">▤ Text tools</button><button class="cat" data-cat="Developer">⌘ Developer</button><button class="cat" data-cat="Calculators">＋ Calculators</button><button class="cat" data-cat="Image & Design">◈ Image & Design</button><button class="cat" data-cat="Utilities">⚙ Utilities</button></aside><main class="cards" id="cards"></main></div>
+<div class="layout"><aside class="sidebar"><div class="side-label">CATEGORIES</div><button class="cat active" data-cat="All">✦ All tools</button><button class="cat" data-cat="Text">▤ Text tools</button><button class="cat" data-cat="Developer">⌘ Developer</button><button class="cat" data-cat="Writing">✎ Writing</button><button class="cat" data-cat="Calculators">＋ Calculators</button><button class="cat" data-cat="Image & Design">◈ Image & Design</button><button class="cat" data-cat="Utilities">⚙ Utilities</button></aside><main class="cards" id="cards"></main></div>
 <footer class="footer" id="about"><div><b>NEXORA</b> · One Platform. Endless Possibilities.</div><div>Built for useful work. Your inputs stay in your browser for these tools.</div><div>© <span id="year"></span> NEXORA</div></footer>
 </div>
 <script>
@@ -81,7 +81,7 @@ case'age':h=field('Date of birth','dob','','date')+btn('Calculate age','run')+ou
 case'color':h='<div class="field"><label>Choose a color</label><input type="color" id="picker" value="#5b9cff" style="height:58px;padding:5px"></div>'+out();break;
 case'image':h='<div class="field"><label>Select image</label><input id="file" type="file" accept="image/*"></div>'+field('Quality (0.1–1)','quality','0.75','number')+btn('Compress image','run')+out()+'<div id="download"></div>';break;
 case'qr':h=field('Text or URL','qrtext','https://example.com')+field('Size (pixels)','size','220','number')+btn('Generate QR code','run')+out()+'<div id="qrbox"></div>';break;
-case'time':h=field('Unix timestamp (seconds or milliseconds)','stamp','e.g. 1735689600')+btn('Convert timestamp','run')+out();break;
+case'time':h=field('Unix timestamp (seconds or milliseconds)','stamp','e.g. 1735689600')+btn('Convert timestamp','run')+out();break;\ncase'html':h=area('Text or HTML entities','txt')+'<div class="actions">'+btn('Encode HTML','encode')+btn('Decode HTML','decode',true)+'</div>'+out();break;\ncase'csv':h=area('CSV input','txt','name,age\\nManish,28')+btn('Convert to JSON','run')+out();break;\ncase'hash':h=area('Text to hash','txt')+btn('Generate SHA-256','run')+out();break;\ncase'diff':h=area('Original text','txt','Paste original text...')+area('Changed text','txt2','Paste changed text...')+btn('Compare text','run')+out();break;\ncase'slug':h=field('Page title','txt','Enter a title')+btn('Generate slug','run')+out();break;
 }
 body.innerHTML=h;panel.classList.add('open');panel.scrollIntoView({behavior:'smooth',block:'start'});wire(id);
 }
