@@ -16,7 +16,7 @@
 <section class="hero"><div class="eyebrow">Your digital workspace</div><h1>One Platform.<br><span>Endless Possibilities.</span></h1><p>Simple, powerful tools for everyday digital work. Fast, free and ready to use — right in your browser.</p><div class="search"><span>⌕</span><input id="search" placeholder="Search 20 free tools..." aria-label="Search tools"></div></section>
 <div class="section-head" id="tools"><div><h2>Explore tools</h2><p>Useful utilities. No installation required.</p></div><div class="count" id="count">15 tools</div></div>
 <div class="tool-panel" id="panel"><div class="panel-top"><h3 id="panelTitle">Tool</h3><button class="close" id="close">✕ Close</button></div><div id="panelBody"></div></div>
-<div class="layout"><aside class="sidebar"><div class="side-label">CATEGORIES</div><button class="cat active" data-cat="All">✦ All tools</button><button class="cat" data-cat="Text">▤ Text tools</button><button class="cat" data-cat="Developer">⌘ Developer</button><button class="cat" data-cat="Writing">✎ Writing</button><button class="cat" data-cat="Calculators">＋ Calculators</button><button class="cat" data-cat="Image & Design">◈ Image & Design</button><button class="cat" data-cat="Utilities">⚙ Utilities</button></aside><main class="cards" id="cards"></main></div>
+<div class="layout"><aside class="sidebar"><div class="side-label">CATEGORIES</div><button class="cat active" data-cat="All">✦ All tools</button><button class="cat" data-cat="Text">▤ Text tools</button><button class="cat" data-cat="Developer">⌘ Developer</button><button class="cat" data-cat="Writing">✎ Writing</button><button class="cat" data-cat="Writing">✎ Writing</button><button class="cat" data-cat="Calculators">＋ Calculators</button><button class="cat" data-cat="Image & Design">◈ Image & Design</button><button class="cat" data-cat="Utilities">⚙ Utilities</button></aside><main class="cards" id="cards"></main></div>
 <footer class="footer" id="about"><div><b>NEXORA</b> · One Platform. Endless Possibilities.</div><div>Built for useful work. Your inputs stay in your browser for these tools.</div><div>© <span id="year"></span> NEXORA</div></footer>
 </div>
 <script>
@@ -35,7 +35,12 @@ const tools=[
 {id:'color',name:'Color Picker',cat:'Image & Design',icon:'◉',desc:'Pick a color and copy HEX, RGB and HSL values.'},
 {id:'image',name:'Image Compressor',cat:'Image & Design',icon:'▧',desc:'Compress an image locally in your browser.'},
 {id:'qr',name:'QR Code Generator',cat:'Utilities',icon:'▦',desc:'Create a QR code for a link or short text.'},
-{id:'time',name:'Timestamp Converter',cat:'Developer',icon:'◴',desc:'Convert Unix timestamps and readable dates.'}
+{id:'time',name:'Timestamp Converter',cat:'Developer',icon:'◴',desc:'Convert Unix timestamps and readable dates.'},
+{id:'html',name:'HTML Entity Converter',cat:'Developer',icon:'&lt;&gt;',desc:'Encode and decode HTML special characters.'},
+{id:'csv',name:'CSV to JSON',cat:'Developer',icon:'CSV',desc:'Convert CSV rows into structured JSON.'},
+{id:'hash',name:'SHA-256 Generator',cat:'Developer',icon:'#',desc:'Generate a SHA-256 hash from text.'},
+{id:'diff',name:'Text Diff Checker',cat:'Writing',icon:'±',desc:'Compare two text blocks and find changes.'},
+{id:'slug',name:'URL Slug Generator',cat:'Writing',icon:'↗',desc:'Turn titles into clean URL-friendly slugs.'}
 ];
 let category='All',query='';
 const cards=document.getElementById('cards'),panel=document.getElementById('panel'),body=document.getElementById('panelBody');
